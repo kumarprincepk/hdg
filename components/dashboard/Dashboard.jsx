@@ -10,8 +10,9 @@ import WhyTrustUsSection from "./whyTrustUsSection/WhyTrustUsSection";
 
 export default function Dashboard (){
     return(
+        <>
+        {/* <VideoSection/> */}
         <main>
-            <VideoSection/>
             <AboutSection/>
             <GalleryImages/>
             <WhatWeDoSection/>
@@ -19,5 +20,6 @@ export default function Dashboard (){
             <TestimonialSection/>
             <ReadMoreSection/>
         </main>
+        </>
     )
 }
