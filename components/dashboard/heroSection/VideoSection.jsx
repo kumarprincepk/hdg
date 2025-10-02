@@ -1,11 +1,10 @@
 "use client";
 
-
 export default function VideoSection() {
   return (
     <div className="heroBgVideo">
         <video autoPlay muted loop>
-            <source src="/assets/videos/hd-group-desktop.mp4" type="video/mp4" />
+            <source src="/videos/hd-group-desktop.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
 

@@ -1,10 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
-import LogoDark from "../../public/assets/images/logo/logo-dark.png";
-import LogoLight from "../../public/assets/images/logo/logo-white.png";
 import serviceDetails from "@/public/data/pageInfo";
 import Link from "next/link";
+import Image from "next/image";
+import projectInfo from "@/public/data/projectInfo";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,88 +31,90 @@ export default function Header() {
       <header className={`header-sticky ${isSticky ? "is-sticky" : ""}`}>
         <nav className="navbar navbar-expand-lg main-menu">
           <div className="container-fluid">
-            <a className="navbar-brand" href="#">
-              <img src={LogoDark} className="" alt="logo" />
-              <img src={LogoLight} className="" alt="logo" />
-            </a>
-            <button
-              className="navbar-toggler"
-              type="button"
-              // data-bs-toggle="collapse"
-              // data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-              data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
-            >
-              <span className="navbar-toggler-icon" />
-            </button>
+            <div className="position-relative w-100 d-flex justify-content-between">
+              <a className="navbar-brand" href="#">
+                {/* <img src='/images/logo/logo-dark.png' alt="logo" /> */}
+                {/* <img src="/images/logo/logo-white.png" alt="logo" /> */}
+                {/* <Image
+                  src="/images/logo/logo-white.png"
+                  alt="logo-image"
+                  width={250}
+                  height={50}
+                  className="object-cover w-full"
+                /> */}
+              </a>
+              <button
+                className="navbar-toggler"
+                type="button"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+              >
+                <span className="navbar-toggler-icon" />
+              </button>
 
-            <div className="collapse navbar-collapse" id="navbarNav">
-              <div className="ms-auto w-100 d-flex justify-content-end menu-on-hover">
-                <ul
-                  className={`navbar-nav navigation ${
-                    menuOpen ? "d-lg-flex" : "d-lg-none"
-                  }`}
-                >
-                  <li className="current-menu">
-                    <a href="#">Home</a>
-                  </li>
-                  <li>
-                    <a href="#">About</a>
-                  </li>
-                  <li className="has-child submenu-full">
-                    <a href="#">Projects</a>
-                    <ul className="submenu">
-                      <li>
-                        <ul className="submenu2">
-                          <li>
-                            <a href="#">
-                              <img src="images/residential.jpg" />
-                              <p className="mt-3 mb-0">Residential</p>
-                            </a>
+              <div className="collapse navbar-collapse" id="navbarNav">
+                <div className="ms-auto d-flex justify-content-end menu-on-hover">
+                  <ul className="navbar-nav navigation me-lg-5">
+                    <li className="current-menu">
+                      <Link href="/">Home</Link>
+                    </li>
+                    <li>
+                      <Link href="/about">About</Link>
+                    </li>
+                    <li className="has-child submenu-full">
+                      <Link href="/">Projects</Link>
+                      <ul className="submenu">
+                        {projectInfo.map((project) => (
+                          <li key={project.id}>
+                            <ul className="submenu2">
+                              <li>
+                                <Link href={`/projects/${project?.slug}`}>
+                                  <Image
+                                    src={project?.image}
+                                    width={635}
+                                    height={350}
+                                    alt={project?.heading}
+                                  />
+                                </Link>
+                              </li>
+                            </ul>
+                            <Link href={`/projects/${project?.slug}`}>
+                              {project.heading}
+                            </Link>
                           </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <ul className="submenu2">
-                          <li>
-                            <a href="#">
-                              <img src="images/commercial.jpg" />
-                              <p className="mt-3 mb-0">Commercial</p>
-                            </a>
+                        ))}
+                      </ul>
+                    </li>
+                    <li className="has-child ">
+                      <a href="#">Services</a>
+                      <ul className="submenu">
+                        {serviceDetails.map((service) => (
+                          <li key={service.id}>
+                            <Link
+                              className="a"
+                              href={`/services/${service.slug}`}
+                            >
+                              {service.heading}
+                            </Link>
                           </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="has-child ">
-                    <a href="#">Services</a>
-                    <ul className="submenu">
-                      {serviceDetails.map((service) => (
-                        <li key={service.id}>
-                          <Link
-                            className='a'
-                            href={`/services/${service.slug}`}
-                          >
-                            {service.heading}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">Contact</a>
-                  </li>
-                </ul>
-                <div
-                  className="linkOnHover text-white ps-5"
-                  onClick={() => setMenuOpen(!menuOpen)}
-                  role="button"
-                  tabIndex={0}
-                >
-                  Menu
+                        ))}
+                      </ul>
+                    </li>
+                    <li>
+                      <Link href="/contact">Contact</Link>
+                    </li>
+                  </ul>
+                  <div
+                    className="linkOnHover text-white"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    Menu
+                  </div>
                 </div>
               </div>
             </div>
@@ -123,89 +125,84 @@ export default function Header() {
       <header className="">
         <nav className="navbar navbar-expand-lg main-menu">
           <div className="container-fluid">
-            <a className="navbar-brand" href="#">
-              <img src={LogoDark} className="" alt="logo" />
-              <img src={LogoLight} className="" alt="logo" />
-            </a>
-            <button
-              className="navbar-toggler"
-              type="button"
-              // data-bs-toggle="collapse"
-              // data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-              data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
-            >
-              <span className="navbar-toggler-icon" />
-            </button>
+            <div className="position-relative w-100 d-flex justify-content-between">
+              <a className="navbar-brand" href="#">
+                {/* <img src='/images/logo/logo-dark.png' className="" alt="logo" />
+                <img src='/images/logo/logo-white.png' className="" alt="logo" /> */}
+              </a>
+              <button
+                className="navbar-toggler"
+                type="button"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+              >
+                <span className="navbar-toggler-icon" />
+              </button>
 
-            <div className="collapse navbar-collapse" id="navbarNav">
-              <div className="ms-auto w-100 d-flex justify-content-end menu-on-hover">
-                <ul
-                  className={`navbar-nav navigation ${
-                    menuOpen ? "d-flex" : "d-none"
-                  }`}
-                >
-                  <li className="current-menu">
-                    <a href="#">Home</a>
-                  </li>
-                  <li>
-                    <a href="#">About</a>
-                  </li>
-                  <li className="has-child submenu-full">
-                    <a href="#">Projects</a>
-                    <ul className="submenu">
-                      <li>
-                        <ul className="submenu2">
-                          <li>
-                            <a href="#">
-                              <img src="images/residential.jpg" />
-                              <p className="mt-3 mb-0">Residential</p>
-                            </a>
+              <div className="collapse navbar-collapse" id="navbarNav">
+                <div className="ms-auto d-flex justify-content-end menu-on-hover">
+                  <ul className="navbar-nav navigation me-lg-5">
+                    <li className="current-menu">
+                      <Link href="/">Home</Link>
+                    </li>
+                    <li>
+                      <Link href="/about">About</Link>
+                    </li>
+                    <li className="has-child submenu-full">
+                      <Link href="/">Projects</Link>
+                      <ul className="submenu">
+                        {projectInfo.map((project) => (
+                          <li key={project.id}>
+                            <ul className="submenu2">
+                              <li>
+                                <Link href={`/projects/${project?.slug}`}>
+                                  <Image
+                                    src={project?.image}
+                                    width={635}
+                                    height={350}
+                                    alt={project?.heading}
+                                  />
+                                </Link>
+                              </li>
+                            </ul>
+                            <Link href={`/projects/${project?.slug}`}>
+                              {project.heading}
+                            </Link>
                           </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <ul className="submenu2">
-                          <li>
-                            <a href="#">
-                              <img src="images/commercial.jpg" />
-                              <p className="mt-3 mb-0">Commercial</p>
-                            </a>
+                        ))}
+                      </ul>
+                    </li>
+                    <li className="has-child ">
+                      <a href="#">Services</a>
+                      <ul className="submenu">
+                        {serviceDetails.map((service) => (
+                          <li key={service.id}>
+                            <Link
+                              className="a"
+                              href={`/services/${service.slug}`}
+                            >
+                              {service.heading}
+                            </Link>
                           </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="has-child ">
-                    <a href="#">Services</a>
-                    <ul className="submenu">
-                      {serviceDetails.map((service) => (
-                        <li key={service.id}>
-                          <Link
-                            className='a'
-                            href={`/services/${service.slug}`}
-                          >
-                            {service.heading}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">Contact</a>
-                  </li>
-                </ul>
+                        ))}
+                      </ul>
+                    </li>
+                    <li>
+                      <Link href="/contact">Contact</Link>
+                    </li>
+                  </ul>
 
-                <div
-                  className="linkOnHover text-white ps-5"
-                  onClick={() => setMenuOpen(!menuOpen)}
-                  role="button"
-                  tabIndex={0}
-                >
-                  Menu
+                  <div
+                    className="linkOnHover text-white"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    Menu
+                  </div>
                 </div>
               </div>
             </div>
@@ -225,7 +222,7 @@ export default function Header() {
           <div className="modal-content">
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="staticBackdropLabel">
-                <img src={LogoDark} className="" alt="logo" />
+                <img src="/images/logo/logo-dark.png" className="" alt="logo" />
               </h1>
               <button
                 type="button"
@@ -241,32 +238,21 @@ export default function Header() {
                     <div className="ms-auto w-100 d-flex justify-content-end menu-on-hover">
                       <ul className="navbar-nav navigation">
                         <li className="current-menu">
-                          <a href="#">Home</a>
+                          <Link href="/">Home</Link>
                         </li>
                         <li>
-                          <a href="#">About</a>
+                          <Link href="/about">About</Link>
                         </li>
                         <li className="has-child">
-                          <a
-                            className=""
-                            href="#"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                          >
                             Projects
-                          </a>
                           <ul className="dropdown-menu submenu">
-                            <li>
-                              <a className="dropdown-item" href="#">
-                                Residential
-                              </a>
+                            {projectInfo.map((project,index) => (
+                            <li key={index}>
+                              <Link className="dropdown-item" href={`/projects/${project?.slug}`}>
+                                {project.heading}
+                              </Link>
                             </li>
-                            <li>
-                              <a className="dropdown-item" href="#">
-                                Commercial
-                              </a>
-                            </li>
+                            ))}
                           </ul>
                         </li>
 
@@ -284,7 +270,7 @@ export default function Header() {
                             {serviceDetails.map((service) => (
                               <li key={service.id}>
                                 <Link
-                                  className='a'
+                                  className="a"
                                   href={`/services/${service.slug}`}
                                 >
                                   {service.heading}
@@ -295,7 +281,7 @@ export default function Header() {
                         </li>
 
                         <li>
-                          <a href="#">Contact</a>
+                          <Link href="/contact">Contact</Link>
                         </li>
                       </ul>
                     </div>

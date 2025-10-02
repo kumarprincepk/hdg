@@ -3,7 +3,7 @@
         id: 1,
         heading: "Sales & Collaboration",
         slug: "sales-collaboration",
-        image: '/assets/images/gallery/picture11.jpg',
+        image: '/images/gallery/picture1.jpg',
         details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci eum doloremque esse voluptate harum veniam excepturi, quasi fugiat, nemo necessitatibus ea 
         provident libero nulla placeat, alias itaque sequi earum enim velit. Fugiat facere sit dolores aperiam voluptatem provident. Perspiciatis, voluptates saepe dolor magnam 
         officia cupiditate voluptatum ducimus asperiores voluptatem dolorem! Deserunt sunt commodi a nostrum qui voluptates? Quasi in, fuga praesentium unde ullam magnam sunt pariatur 
@@ -21,7 +21,7 @@
         id: 2,
         heading: "Interior Design",
         slug: "interior-design",
-        image: '/assets/images/gallery/picture2.jpeg',
+        image: '/images/gallery/picture2.jpeg',
         details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci eum doloremque esse voluptate harum veniam excepturi, quasi fugiat, nemo necessitatibus ea 
         provident libero nulla placeat, alias itaque sequi earum enim velit. Fugiat facere sit dolores aperiam voluptatem provident. Perspiciatis, voluptates saepe dolor magnam 
         officia cupiditate voluptatum ducimus asperiores voluptatem dolorem! Deserunt sunt commodi a nostrum qui voluptates? Quasi in, fuga praesentium unde ullam magnam sunt pariatur 
@@ -39,7 +39,7 @@
         id: 3,
         heading: "Turnkey Execution",
         slug: "turnkey-execution",
-        image: '/assets/images/gallery/picture3.jpg',
+        image: '/images/gallery/picture3.jpg',
         details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci eum doloremque esse voluptate harum veniam excepturi, quasi fugiat, nemo necessitatibus ea 
         provident libero nulla placeat, alias itaque sequi earum enim velit. Fugiat facere sit dolores aperiam voluptatem provident. Perspiciatis, voluptates saepe dolor magnam 
         officia cupiditate voluptatum ducimus asperiores voluptatem dolorem! Deserunt sunt commodi a nostrum qui voluptates? Quasi in, fuga praesentium unde ullam magnam sunt pariatur 
@@ -57,7 +57,7 @@
         id: 4,
         heading: "Commercial Leasing",
         slug: "commercial-leasing",
-        image: '/assets/images/gallery/picture4.jpg',
+        image: '/images/gallery/picture4.jpg',
         details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci eum doloremque esse voluptate harum veniam excepturi, quasi fugiat, nemo necessitatibus ea 
         provident libero nulla placeat, alias itaque sequi earum enim velit. Fugiat facere sit dolores aperiam voluptatem provident. Perspiciatis, voluptates saepe dolor magnam 
         officia cupiditate voluptatum ducimus asperiores voluptatem dolorem! Deserunt sunt commodi a nostrum qui voluptates? Quasi in, fuga praesentium unde ullam magnam sunt pariatur 
@@ -75,7 +75,7 @@
         id: 5,
         heading: "Building Management",
         slug: "building-management",
-        image: '/assets/images/gallery/picture4.jpg',
+        image: '/images/gallery/picture4.jpg',
         details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci eum doloremque esse voluptate harum veniam excepturi, quasi fugiat, nemo necessitatibus ea 
         provident libero nulla placeat, alias itaque sequi earum enim velit. Fugiat facere sit dolores aperiam voluptatem provident. Perspiciatis, voluptates saepe dolor magnam 
         officia cupiditate voluptatum ducimus asperiores voluptatem dolorem! Deserunt sunt commodi a nostrum qui voluptates? Quasi in, fuga praesentium unde ullam magnam sunt pariatur 
