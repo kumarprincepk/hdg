@@ -8,31 +8,10 @@ import { GrFormNextLink } from "react-icons/gr";
 import Link from "next/link";
 import "swiper/css";
 
-export default function ReadMoreSection() {
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Building gains into housing stocks and how to trade the...",
-      date: "26 August, 2024",
-      category: "Real estate",
-      image: "/images/blog-grid-1.jpg",
-    },
-    {
-      id: 2,
-      title: "Building gains into housing stocks and how to trade the...",
-      date: "26 August, 2024",
-      category: "News",
-      image: "/images/blog-grid-2.jpg",
-    },
-    {
-      id: 3,
-      title: "Building gains into housing stocks and how to trade the...",
-      date: "26 August, 2024",
-      category: "Real estate",
-      image: "/images/blog-grid-3.jpg",
-    },
-  ];
+// Import the blogPosts data (make sure the path is correct)
+import blogPosts from "../../../public/data/blogPosts";
 
+export default function ReadMoreSection() {
   return (
     <section className="blogs">
       <div className="container-fluid">
@@ -44,60 +23,64 @@ export default function ReadMoreSection() {
 
         <div className="row">
           <div className="col mb-4">
-              <Swiper
-                modules={[Autoplay]}
-                spaceBetween={30}
-                loop={true}
-                grabCursor={true}
-                autoplay={{
-                  delay: 2000,
-                  disableOnInteraction: false,
-                }}
-                breakpoints={{
-                  320: { slidesPerView: 1, spaceBetween: 15 },
-                  480: { slidesPerView: 2, spaceBetween: 20 },
-                  768: { slidesPerView: 2, spaceBetween: 20 },
-                  1100: { slidesPerView: 3, spaceBetween: 30 },
-                }}
-                style={{
-                  WebkitOverflowScrolling: "touch",
-                }}
-              >
-                {blogPosts.map((post) => (
-                  <SwiperSlide key={post.id}>
-                    <div class="blog-article-item">
-                      <div class="image-wrap mb-4">
-                          <a href="#">
-                              <img class="lazyload"
-                                  src="/assets/images/blog/blog-grid-1.jpg" alt="" />
-                          </a>
-                          <div class="box-tag">
-                              <div class="tag-item">Real estate</div>
-                          </div>
+            <Swiper
+              modules={[Autoplay]}
+              spaceBetween={30}
+              loop={true}
+              grabCursor={true}
+              autoplay={{
+                delay: 2000,
+                disableOnInteraction: false,
+              }}
+              breakpoints={{
+                320: { slidesPerView: 1, spaceBetween: 15 },
+                480: { slidesPerView: 2, spaceBetween: 20 },
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                1100: { slidesPerView: 3, spaceBetween: 30 },
+              }}
+              style={{
+                WebkitOverflowScrolling: "touch",
+              }}
+            >
+              {blogPosts.map((post) => (
+                <SwiperSlide key={post.id}>
+                  <div className="blog-article-item">
+                    <div className="image-wrap mb-4">
+                      <Link href={`/blog/${post.slug}`}>
+                        <Image 
+                          src={post.image} 
+                          alt={post.title}
+                          width={400}
+                          height={250}
+                          className="lazyload"
+                          style={{ width: '100%', height: 'auto' }}
+                        />
+                      </Link>
+                      <div className="box-tag">
+                        <div className="tag-item">{post.category}</div>
                       </div>
-                      <div class="article-content pt-2">
-                          <div class="time">
-                              <div class="icons">
-                                  <i class="icon-clock"></i>
-                              </div>
-                              <p>26 August, 2024</p>
-                          </div>
-                          <h4 class="title">
-                              <a href="#" class="line-clamp-2">Building gains into
-                                  housing
-                                  stocks and how to
-                                  trade the...</a>
-                          </h4>
-                          <a href="#" class="btn-link">
-                              <span>
-                                  Read More
-                              </span> <i class="icon-circle-arrow"></i>
-                          </a>
+                    </div>
+                    <div className="article-content pt-2">
+                      <div className="time">
+                        <div className="icons">
+                          <CiStopwatch />
+                        </div>
+                        <p>{post.date}</p>
                       </div>
+                      <h4 className="title">
+                        <Link href={`/blog/${post.slug}`} className="line-clamp-2">
+                          {post.title}
+                        </Link>
+                      </h4>
+                      <Link href={`/blog/${post.slug}`} className="btn-link">
+                        <span>Read More</span>
+                        <GrFormNextLink className="icon-circle-arrow" />
+                      </Link>
+                    </div>
                   </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </div>

@@ -15,7 +15,10 @@ function Counter({ target, label }) {
   const started = useRef(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
+    ) {
       setCount(target);
       return;
     }
@@ -29,7 +32,7 @@ function Counter({ target, label }) {
       ([entry]) => {
         if (entry.isIntersecting && !started.current) {
           started.current = true;
-            setTimeout(() => setCount(target), 200);
+          setTimeout(() => setCount(target), 200);
         }
       },
       {
@@ -45,30 +48,28 @@ function Counter({ target, label }) {
   }, [target]);
 
   return (
-      <div className='countWra' aria-live="polite" aria-atomic="true">
-        <div className="counter-number">
-          <Odometer value={count} format="d" duration={2500} />
-          <span className='plus' aria-hidden="true">+</span>
-        </div>
-        <p className="counter-text">{label}</p>
+    <div className="countWra" ref={ref}>
+      <div className="counter-number">
+        <Odometer value={count} format="d" duration={2500} />
+        <span className="plus" aria-hidden="true">
+          +
+        </span>
       </div>
+      <p className="counter-text">{label}</p>
+    </div>
   );
 }
 
 export default function WhyTrustUsSection() {
   return (
-
-    <>
     <section className="trust-us">
       <div className="container-fluid">
         <div className="row">
-          <h5 className="col mb-3 mb-md-5">
-            Why Trust Us
-          </h5>
+          <h5 className="col mb-3 mb-md-5">Why Trust Us</h5>
         </div>
 
         <div className="row">
-          <ul className="counter">
+          <ul className="counter list-unstyled d-flex flex-wrap gap-4">
             <li>
               <Counter target={500000} label="Sq. Ft. Delivered" />
             </li>
@@ -85,6 +86,5 @@ export default function WhyTrustUsSection() {
         </div>
       </div>
     </section>
-    </>
   );
 }

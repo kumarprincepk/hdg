@@ -1,0 +1,58 @@
+  const blogPosts = [
+    {
+      id: 1,
+      slug: "building-gains-into-housing-stocks-one",
+      title: "1Building gains into housing stocks and how to trade the...",
+      date: "26 August, 2024",
+      category: "Real estate",
+      image: "/images/blog/blog-grid-1.jpg",
+      details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci eum doloremque esse voluptate harum veniam excepturi.`,
+    },
+    {
+      id: 2,
+      slug: "building-gains-into-housing-stocks-two",
+      title: "2Building gains into housing stocks and how to trade the...",
+      date: "26 August, 2024",
+      category: "News",
+      image: "/images/blog/blog-grid-2.jpg",
+      details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci eum doloremque esse voluptate harum veniam excepturi.`,
+    },
+    {
+      id: 3,
+      slug: "building-gains-into-housing-stocks-three",
+      title: "3Building gains into housing stocks and how to trade the...",
+      date: "26 August, 2024",
+      category: "Real estate",
+      image: "/images/blog/blog-grid-3.jpg",
+      details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci eum doloremque esse voluptate harum veniam excepturi.`,
+    },
+    {
+      id: 4,
+      slug: "building-gains-into-housing-stocks-four",
+      title: "4Building gains into housing stocks and how to trade the...",
+      date: "26 August, 2024",
+      category: "Real estate",
+      image: "/images/blog/blog-grid-3.jpg",
+      details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci eum doloremque esse voluptate harum veniam excepturi.`,
+    },
+    {
+      id: 5,
+      slug: "building-gains-into-housing-stocks-six",
+      title: "5Building gains into housing stocks and how to trade the...",
+      date: "26 August, 2024",
+      category: "Real estate",
+      image: "/images/blog/blog-grid-3.jpg",
+      details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci eum doloremque esse voluptate harum veniam excepturi.`,
+    },
+    {
+      id: 6,
+      slug: "building-gains-into-housing-stocks-five",
+      title: "6Building gains into housing stocks and how to trade the...",
+      date: "26 August, 2024",
+      category: "Real estate",
+      image: "/images/blog/blog-grid-3.jpg",
+      details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci eum doloremque esse voluptate harum veniam excepturi.`,
+    },
+  ];
+
+  export default blogPosts;

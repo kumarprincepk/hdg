@@ -11,7 +11,7 @@ import WhyTrustUsSection from "./whyTrustUsSection/WhyTrustUsSection";
 export default function Dashboard (){
     return(
         <>
-        {/* <VideoSection/> */}
+        <VideoSection/>
         <main>
             <AboutSection/>
             <GalleryImages/>

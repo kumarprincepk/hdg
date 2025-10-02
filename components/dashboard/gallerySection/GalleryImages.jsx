@@ -27,60 +27,60 @@ export default function GalleryImage() {
 
   const images = [
     {
-      original: "/assets/images/gallery/picture9.jpg",
-      thumbnail: "/assets/images/gallery/picture9.jpg",
+      original: "/images/gallery/picture9.jpg",
+      thumbnail: "/images/gallery/picture9.jpg",
     },
     {
-      original: "/assets/images/gallery/picture14.jpg",
-      thumbnail: "/assets/images/gallery/picture14.jpg",
+      original: "/images/gallery/picture14.jpg",
+      thumbnail: "/images/gallery/picture14.jpg",
     },
     {
-      original: "/assets/images/gallery/picture1.jpg",
-      thumbnail: "/assets/images/gallery/picture1.jpg",
+      original: "/images/gallery/picture1.jpg",
+      thumbnail: "/images/gallery/picture1.jpg",
     },
     {
-      original: "/assets/images/gallery/picture2.jpeg",
-      thumbnail: "/assets/images/gallery/picture2.jpeg",
+      original: "/images/gallery/picture2.jpeg",
+      thumbnail: "/images/gallery/picture2.jpeg",
     },
     {
-      original: "/assets/images/gallery/picture10.jpg",
-      thumbnail: "/assets/images/gallery/picture10.jpg",
+      original: "/images/gallery/picture10.jpg",
+      thumbnail: "/images/gallery/picture10.jpg",
     },
     {
-      original: "/assets/images/gallery/picture3.jpg",
-      thumbnail: "/assets/images/gallery/picture3.jpg",
+      original: "/images/gallery/picture3.jpg",
+      thumbnail: "/images/gallery/picture3.jpg",
     },
     {
-      original: "/assets/images/gallery/picture11.jpg",
-      thumbnail: "/assets/images/gallery/picture11.jpg",
+      original: "/images/gallery/picture11.jpg",
+      thumbnail: "/images/gallery/picture11.jpg",
     },
     {
-      original: "/assets/images/gallery/picture4.jpg",
-      thumbnail: "/assets/images/gallery/picture4.jpg",
+      original: "/images/gallery/picture4.jpg",
+      thumbnail: "/images/gallery/picture4.jpg",
     },
     {
-      original: "/assets/images/gallery/picture5.jpg",
-      thumbnail: "/assets/images/gallery/picture5.jpg",
+      original: "/images/gallery/picture5.jpg",
+      thumbnail: "/images/gallery/picture5.jpg",
     },
     {
-      original: "/assets/images/gallery/picture6.jpeg",
-      thumbnail: "/assets/images/gallery/picture6.jpeg",
+      original: "/images/gallery/picture6.jpeg",
+      thumbnail: "/images/gallery/picture6.jpeg",
     },
     {
-      original: "/assets/images/gallery/picture7.jpeg",
-      thumbnail: "/assets/images/gallery/picture7.jpeg",
+      original: "/images/gallery/picture7.jpeg",
+      thumbnail: "/images/gallery/picture7.jpeg",
     },
     {
-      original: "/assets/images/gallery/picture8.jpeg",
-      thumbnail: "/assets/images/gallery/picture8.jpeg",
+      original: "/images/gallery/picture8.jpeg",
+      thumbnail: "/images/gallery/picture8.jpeg",
     },
     {
-      original: "/assets/images/gallery/picture12.jpg",
-      thumbnail: "/assets/images/gallery/picture12.jpg",
+      original: "/images/gallery/picture12.jpg",
+      thumbnail: "/images/gallery/picture12.jpg",
     },
     {
-      original: "/assets/images/gallery/picture13.jpg",
-      thumbnail: "/assets/images/gallery/picture13.jpg",
+      original: "/images/gallery/picture13.jpg",
+      thumbnail: "/images/gallery/picture13.jpg",
     },
   ];
 
@@ -188,27 +188,31 @@ export default function GalleryImage() {
           </div>
 
           <div className="row">
-            <div className="gallery" aria-label="Image gallery grid">
-              {visibleThumbnails.map((img, idx) => {
-                const areaClass = `image-${String.fromCharCode(97 + idx)}`;
-                return (
-                  <button
-                    key={idx}
-                    type="button"
-                    className={`image ${areaClass} btn p-0 border-0 bg-transparent position-relative`}
-                    onClick={() => openGalleryAt(idx)}
-                    aria-label={`Open image ${idx + 1}`}
-                  >
-                    <Image
-                      src={img.thumbnail}
-                      alt={`Thumbnail ${idx + 1}`}
-                      fill
-                      priority={idx < 2}
-                      className="img-fluid"
-                    />
-                  </button>
-                );
-              })}
+            <div className="col-12">
+              <ul className="gallery" aria-label="Image gallery grid">
+                {visibleThumbnails.map((img, idx) => {
+                  const areaClass = `image-${String.fromCharCode(97 + idx)}`;
+                  return (
+                    <li key={idx}>
+                      <button
+                        type="button"
+                        className={`image ${areaClass} btn w-100 h-100 p-0 border-0 bg-transparent position-relative`}
+                        onClick={() => openGalleryAt(idx)}
+                        aria-label={`Open image ${idx + 1}`}
+                      >
+                        <Image
+                          src={img.thumbnail}
+                          alt={`Thumbnail ${idx + 1}`}
+                          fill
+                          sizes="(min-width: 768px) 50vw, 100vw"
+                          priority={idx < 2}
+                          className="img-fluid"
+                        />
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </div>
         </div>
@@ -230,21 +234,24 @@ export default function GalleryImage() {
               <div className="d-flex gap-2">
                 <button
                   onClick={togglePlayPause}
-                  className={`btn btn-dark rounded-circle p-2 ${styles.roundBtn}`}
+                  className={`btn btn-dark rounded-circle p-2 d-flex align-items-center justify-content-center ${styles.roundBtn}`}
+                  style={{width: '40px', height: '40px'}}
                 >
                   {isPlaying ? <PauseIcon /> : <PlayIcon />}
                 </button>
 
                 <button
                   onClick={toggleFullscreen}
-                  className={`btn btn-dark rounded-circle p-2 ${styles.roundBtn}`}
+                  className={`btn btn-dark rounded-circle p-2 d-flex align-items-center justify-content-center ${styles.roundBtn}`}
+                  style={{width: '40px', height: '40px'}}
                 >
                   {isFullscreen ? <ExitFullscreenIcon /> : <FullscreenIcon />}
                 </button>
 
                 <button
                   onClick={handleClose}
-                  className={`btn btn-dark rounded-circle p-2 ${styles.roundBtn}`}
+                  className={`btn btn-dark rounded-circle p-2 d-flex align-items-center justify-content-center ${styles.roundBtn}`}
+                  style={{width: '40px', height: '40px'}}
                 >
                   <CloseIcon />
                 </button>
@@ -262,6 +269,7 @@ export default function GalleryImage() {
               <button
                 onClick={goToPrev}
                 className={`position-absolute start-0 ms-3 z-3 btn btn-dark rounded-circle ${styles.navBtn}`}
+                style={{width: '30px', height: '30px'}}
               >
                 <PrevIcon />
               </button>
@@ -273,7 +281,8 @@ export default function GalleryImage() {
                   src={images[currentIndex].original}
                   alt={`Image ${currentIndex + 1}`}
                   fill
-                  className={`img-fluid ${styles.slide} ${
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className={`img-fluid object-contain ${styles.slide} ${
                     slideDirection === "left"
                       ? styles.slideLeft
                       : slideDirection === "right"
@@ -301,7 +310,7 @@ export default function GalleryImage() {
                   <button
                     key={index}
                     type="button"
-                    className={`position-relative w-100 h-100 flex-shrink-0 border border-2 p-0 overflow-hidden rounded ${
+                    className={`position-relative flex-shrink-0 border border-2 p-0 overflow-hidden rounded ${
                       index === currentIndex
                         ? styles.thumbActive
                         : styles.thumbInactive
@@ -313,6 +322,7 @@ export default function GalleryImage() {
                       src={img.thumbnail}
                       alt={`Thumbnail ${index + 1}`}
                       fill
+                      sizes="(min-width: 768px) 50vw, 100vw"
                       className="img-fluid"
                       style={{ objectFit: "cover" }}
                     />

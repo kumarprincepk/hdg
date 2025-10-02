@@ -9,7 +9,7 @@ export default function WhatWeDoSection() {
       id: 1,
       title: "New Construction",
       description: `We design spaces with a timeless vision, balancing innovation and aesthetic appeal while keeping your budget in mind. Whether residential or commercial, our collaborative approach ensures that every project is thoughtfully designed and executed.`,
-      image: "/assets/images/whatWeDo/Screenshot.png",
+      image: "/images/whatWeDo/Screenshot.png",
       ctaText: "Read More",
     },
     {
@@ -17,7 +17,7 @@ export default function WhatWeDoSection() {
       title: "Real Estate Consultancy",
       description: `We blend our 30 years of expertise with our dedication to service to give our clients the best solutions to their real
  estate challenges. If it is finding the right location for your dream house, or it is providing expertise on investment opportunities.`,
-      image: "/assets/images/whatWeDo/Screenshot (85) (1).png",
+      image: "/images/whatWeDo/Screenshot (85) (1).png",
       ctaText: "Read More",
     },
 
@@ -26,7 +26,7 @@ export default function WhatWeDoSection() {
       title: "Interior Design",
       description: `Our interior design solutions are client centric, mixing bold elements with timeless sophistication. From traditional
  to contemporary, our portfolio is a reflection of your style and passions, creating environments that are a harmonious blend of contrast and unity.`,
-      image: "/assets/images/whatWeDo/agent-item.jpg",
+      image: "/images/whatWeDo/agent-item.jpg",
       ctaText: "Read More",
     },
     {
@@ -34,7 +34,7 @@ export default function WhatWeDoSection() {
       title: "Maintenance Services",
       description: `Our comprehensive maintenance solutions ensure that your space remains efficient, professional and safe. From daily
  inspections to cleaning and security, we handle it all.`,
-      image: "/assets/images/whatWeDo/section-pre-approved1.jpg",
+      image: "/images/whatWeDo/section-pre-approved1.jpg",
       ctaText: "Read More",
     },
   ];
@@ -135,13 +135,13 @@ export default function WhatWeDoSection() {
             {services.map((s) => (
             <div className="col-sm-6" key={s.id}>
               <article  className="card border-0 rounded-3 text-white overflow-hidden h-100">
-                <picture className="overflow-hidden">
+                {/* <picture className="overflow-hidden"> */}
                   <img src={s.image} className="img-fluid border-0" alt={s.title}/>
                   {/* <Image 
                   src={s.image}
                     fill
                   className="img-fluid border-0" alt={s.title}/> */}
-                </picture>
+                {/* </picture> */}
                 <div className="card-body p-4">
                   <h3 className="card-title">{s.title}</h3>
                   <p className="card-text mb-4">{s.description}</p>
@@ -159,7 +159,7 @@ export default function WhatWeDoSection() {
             {/* <div className="col-sm-6">
               <article className="card border-0 rounded-3 text-white overflow-hidden h-100">
                 <picture className="overflow-hidden">
-                  <img src="/assets/images/gallery/picture1.jpg" className="img-fluid border-0" alt="..."/>
+                  <img src="/images/gallery/picture1.jpg" className="img-fluid border-0" alt="..."/>
                 </picture>
                 <div className="card-body p-4">
                   <h3 className="card-title">New Construction</h3>
@@ -177,7 +177,7 @@ export default function WhatWeDoSection() {
             <div className="col-sm-6">
               <article className="card border-0 rounded-3 text-white overflow-hidden h-100">
                 <picture className="overflow-hidden">
-                  <img src="/assets/images/gallery/picture1.jpg" className="img-fluid border-0" alt="..."/>
+                  <img src="/images/gallery/picture1.jpg" className="img-fluid border-0" alt="..."/>
                 </picture>
                 <div className="card-body p-4">
                   <h3 className="card-title">New Construction</h3>
@@ -195,7 +195,7 @@ export default function WhatWeDoSection() {
             <div className="col-sm-6">
               <article className="card border-0 rounded-3 text-white overflow-hidden h-100">
                 <picture className="overflow-hidden">
-                  <img src="/assets/images/gallery/picture1.jpg" className="img-fluid border-0" alt="..."/>
+                  <img src="/images/gallery/picture1.jpg" className="img-fluid border-0" alt="..."/>
                 </picture>
                 <div className="card-body p-4">
                   <h3 className="card-title">New Construction</h3>
