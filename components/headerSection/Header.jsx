@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-
+import { usePathname } from "next/navigation";
 import serviceDetails from "@/public/data/pageInfo";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,8 +9,10 @@ import projectInfo from "@/public/data/projectInfo";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
+    if (pathname !== "/") return;
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       if (scrollTop < 20) {
@@ -24,24 +26,25 @@ export default function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [pathname]);
 
+  const isHome = pathname === "/";
   return (
     <>
-      <header className={`header-sticky ${isSticky ? "is-sticky" : ""}`}>
+      <header className={`header-sticky 
+          ${isHome && !isSticky ? "transparent-header" : "is-sticky"}
+        `}>
         <nav className="navbar navbar-expand-lg main-menu">
           <div className="container-fluid">
             <div className="position-relative w-100 d-flex justify-content-between">
               <a className="navbar-brand" href="#">
-                {/* <img src='/images/logo/logo-dark.png' alt="logo" /> */}
-                {/* <img src="/images/logo/logo-white.png" alt="logo" /> */}
-                {/* <Image
-                  src="/images/logo/logo-white.png"
-                  alt="logo-image"
-                  width={250}
-                  height={50}
-                  className="object-cover w-full"
-                /> */}
+                <Image
+                  src="/images/logo/HDwhite.png"
+                  alt="logo - hdg"
+                  height={200}
+                  width={200}
+                  className="img-fluid"
+                />
               </a>
               <button
                 className="navbar-toggler"
@@ -129,6 +132,13 @@ export default function Header() {
               <a className="navbar-brand" href="#">
                 {/* <img src='/images/logo/logo-dark.png' className="" alt="logo" />
                 <img src='/images/logo/logo-white.png' className="" alt="logo" /> */}
+                <Image
+                  src="/images/logo/HDwhite.png"
+                  alt="logo Image"
+                  height={250}
+                  width={200}
+                  className="img-fluid"
+                />
               </a>
               <button
                 className="navbar-toggler"
@@ -244,14 +254,17 @@ export default function Header() {
                           <Link href="/about">About</Link>
                         </li>
                         <li className="has-child">
-                            Projects
+                          Projects
                           <ul className="dropdown-menu submenu">
                             {projectInfo.map((project,index) => (
-                            <li key={index}>
-                              <Link className="dropdown-item" href={`/projects/${project?.slug}`}>
-                                {project.heading}
-                              </Link>
-                            </li>
+                              <li key={index}>
+                                <Link
+                                  className="dropdown-item"
+                                  href={`/projects/${project?.slug}`}
+                                >
+                                  {project.heading}
+                                </Link>
+                              </li>
                             ))}
                           </ul>
                         </li>

@@ -74,13 +74,12 @@ export default function Footer() {
             <div className="row">
               <div className="col-md-6">
                 <address className="text-white mb-4">
-                  19, Sector 38
-                  <br />
-                  Gurugram, Haryana
+                  D - 22, Defence Colony, <br />
+                  New Delhi - 110024
                 </address>
               </div>
               <div className="col-md-6">
-                <p className="text-white mb-1">+91-91932-56985</p>
+                <p className="text-white mb-1">+91-93549-40979</p>
                 <p className="text-white">info@homedevelopersgroup.com</p>
               </div>
             </div>
@@ -90,7 +89,7 @@ export default function Footer() {
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56055.88806164287!2d77.15092854480741!3d28.584983353358897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce25a04d8f1f1%3A0xeea20a333b35542d!2sHome%20Developers%20India!5e0!3m2!1sen!2sin!4v1756556221088!5m2!1sen!2sin"
               className={`w-full rounded-md shadow-md`}
-              height={250}
+              style={{ height: "100%", width: "100%", borderRadius: "10px" }}
               title="park-title"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

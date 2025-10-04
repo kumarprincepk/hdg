@@ -115,17 +115,17 @@ const AboutUs = () => {
               <div className="col">
                 <div className="about-heading mb-3 ">— About Us</div>
 
-                <div className="about-text fw-bold lh-base">
+                <h1 className="about-text fw-bold lh-base">
                   Home Developers Group is a wholistic group specializing in
                   turnkey design and build services, as well as collaborations
                   with plot owners for redeveloping and monetizing their assets.
-                </div>
+                </h1>
 
-                <div className="about-text fw-bold lh-base mb-4 pb-4">
+                <h1 className="about-text fw-bold lh-base mb-4 pb-4">
                   With over 25 years of expertise, we have curated premium
                   projects, luxury apartments, commercial complexes, and IT
                   parks in New Delhi & beyond.
-                </div>
+                </h1>
 
                 <hr className="my-2 my-lg-4 pt-2 pt-lg-4" />
 

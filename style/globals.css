@@ -1212,6 +1212,7 @@ body.modal-open {
   background-size: cover;
   display: flex;
   align-items: center;
+  margin-top: -1px;         /*  added by prince   */
 }
 
 .contact-banner::before {
@@ -1377,7 +1378,7 @@ body.modal-open {
 }
 
 .about-text {
-  font-size: 18px;     /*  Prince: convert 30px to 18 px  */
+  font-size: 30px;
   color: #000;
 }
 
@@ -1832,4 +1833,18 @@ body.modal-open {
 
 .list-link:hover {
   text-decoration: underline;
+}
+
+
+.transparent-header {
+  background: transparent !important;
+  border: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.transparent-header .navigation li a {
+  color: var(--White);
 }

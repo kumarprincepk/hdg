@@ -117,44 +117,50 @@ export default function ServicePageClient({ service, slug }) {
   return (
     <>
       <Header />
-      <div className=" py-5">
-        <div className="bg-white p-4 rounded shadow">
+      <div className="">
+        <div className="bg-white rounded shadow">
           <section className="pb-0">
-            <div className="full-bg mb-5">
-              <h2>{service.heading}</h2>
-              <div className="position-relative">
-                <Image
-                  src={service?.image}
-                  alt={service?.heading}
-                  height={200}
-                  width={200}
-                  className="img-fluid"
-                />
-              </div>
+            <div
+              className="full-bg mb-5 d-flex align-items-center justify-content-center text-center"
+              style={{
+                backgroundImage: `url(${service?.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                height: "400px",
+                position: "relative",
+              }}
+            >
+              <h2
+                className="fw-bold text-uppercase"
+                style={{
+                  color: "#000",
+                  fontSize: "3rem",
+                }}
+              >
+                {service.heading}
+              </h2>
             </div>
 
             <div className="container">
               <div className="row">
                 <div className="col pt-2 pb-4">
-                  <div className="about-text lh-base">
-                   {service.details}
-                  </div>
-
+                  <div className="lh-base">{service.details}</div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-5">
+            <div className="mt-5 text-center">
               <img
                 src="/images/whatWeDo/section-help.png"
                 className="img-fluid"
                 style={{ filter: "grayscale(1) contrast(0%) brightness(0)" }}
+                alt="help"
               />
             </div>
           </section>
 
           {/* Contact Form Section */}
-          <div className="mt-5 pt-4 border-top">
+          <div className="mt-5 p-4 pt-4 py-5 border-top">
             <h2 className="h4 fw-bold text-dark mb-4">
               Contact Us About This Service
             </h2>

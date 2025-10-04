@@ -60,8 +60,8 @@ export default function Contact() {
                     <div className="col p-0  mb-3 mb-xl-4">
                       <h4>OUR ADDRESS</h4>
                       <address className="mb-0">
-                        Office
-                        <br /> D - 22,
+                      <h4>Office</h4>
+                         D - 22,
                         <br /> Defence Colony, New Delhi
                       </address>
                     </div>
