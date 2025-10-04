@@ -135,6 +135,8 @@ export default function ServicePageClient({ service, slug }) {
                 style={{
                   color: "#000",
                   fontSize: "3rem",
+                  position: "absolute",
+                  top: "14%"
                 }}
               >
                 {service.heading}

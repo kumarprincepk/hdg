@@ -37,7 +37,7 @@ export default function Header() {
         <nav className="navbar navbar-expand-lg main-menu">
           <div className="container-fluid">
             <div className="position-relative w-100 d-flex justify-content-between">
-              <a className="navbar-brand" href="#">
+              <Link className="navbar-brand" href="/">
                 <Image
                   src="/images/logo/HDwhite.png"
                   alt="logo - hdg"
@@ -45,7 +45,7 @@ export default function Header() {
                   width={200}
                   className="img-fluid"
                 />
-              </a>
+              </Link>
               <button
                 className="navbar-toggler"
                 type="button"
@@ -68,7 +68,7 @@ export default function Header() {
                       <Link href="/about">About</Link>
                     </li>
                     <li className="has-child submenu-full">
-                      <Link href="/">Projects</Link>
+                      <Link href="/projects/residential-projects">Projects</Link>
                       <ul className="submenu">
                         {projectInfo.map((project) => (
                           <li key={project.id}>
@@ -92,7 +92,7 @@ export default function Header() {
                       </ul>
                     </li>
                     <li className="has-child ">
-                      <a href="#">Services</a>
+                      <Link href="/services/sales-collaboration">Services</Link>
                       <ul className="submenu">
                         {serviceDetails.map((service) => (
                           <li key={service.id}>
@@ -129,9 +129,7 @@ export default function Header() {
         <nav className="navbar navbar-expand-lg main-menu">
           <div className="container-fluid">
             <div className="position-relative w-100 d-flex justify-content-between">
-              <a className="navbar-brand" href="#">
-                {/* <img src='/images/logo/logo-dark.png' className="" alt="logo" />
-                <img src='/images/logo/logo-white.png' className="" alt="logo" /> */}
+              <Link className="navbar-brand" href="/">
                 <Image
                   src="/images/logo/HDwhite.png"
                   alt="logo Image"
@@ -139,7 +137,7 @@ export default function Header() {
                   width={200}
                   className="img-fluid"
                 />
-              </a>
+              </Link>
               <button
                 className="navbar-toggler"
                 type="button"
@@ -162,7 +160,7 @@ export default function Header() {
                       <Link href="/about">About</Link>
                     </li>
                     <li className="has-child submenu-full">
-                      <Link href="/">Projects</Link>
+                      <Link href="/projects/residential-projects">Projects</Link>
                       <ul className="submenu">
                         {projectInfo.map((project) => (
                           <li key={project.id}>
@@ -186,7 +184,7 @@ export default function Header() {
                       </ul>
                     </li>
                     <li className="has-child ">
-                      <a href="#">Services</a>
+                      <Link href="/services/sales-collaboration">Services</Link>
                       <ul className="submenu">
                         {serviceDetails.map((service) => (
                           <li key={service.id}>
@@ -270,15 +268,15 @@ export default function Header() {
                         </li>
 
                         <li className="has-child">
-                          <a
+                          <Link
                             className=""
-                            href="#"
+                            href="/services/sales-collaboration"
                             role="button"
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
                           >
                             Services
-                          </a>
+                          </Link>
                           <ul className="dropdown-menu submenu">
                             {serviceDetails.map((service) => (
                               <li key={service.id}>
